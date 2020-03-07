@@ -60,21 +60,24 @@
                                 <rect key="frame" x="200" y="153" width="81" height="24"/>
                                 <buttonCell key="cell" type="square" title="去关于界面" bezelStyle="shadowlessSquare" imagePosition="left" borderStyle="border" inset="2" id="SQB-7d-n5d">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="showAboutWindow:" target="XfG-lQ-9wD" id="Niy-6f-dDX"/>
+                                </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="wrI-yp-OhK">
                                 <rect key="frame" x="136" y="101" width="208" height="18"/>
                                 <buttonCell key="cell" type="check" title="设置要去的界面，可不可以拉伸" bezelStyle="regularSquare" imagePosition="left" inset="2" id="dR0-17-YDS">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="hur-OO-8hN">
                                 <rect key="frame" x="136" y="71" width="182" height="18"/>
                                 <buttonCell key="cell" type="check" title="设置要去的界面，致谢方式" bezelStyle="regularSquare" imagePosition="left" inset="2" id="c5k-WU-9Ik">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                         </subviews>

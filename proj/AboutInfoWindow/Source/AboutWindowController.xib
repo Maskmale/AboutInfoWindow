@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="AboutWindowController" customModule="AboutInfoWindow" customModuleProvider="target">
+            <connections>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <view key="contentView" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="e4U-Rr-jCu" userLabel="placeHolderView">
+                        <rect key="frame" x="20" y="64" width="440" height="186"/>
+                    </customView>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="vX6-Gb-GdX">
+                        <rect key="frame" x="20" y="20" width="440" height="44"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="I8x-gV-Mxa">
+                                <rect key="frame" x="186" y="5" width="133" height="32"/>
+                                <buttonCell key="cell" type="push" title="打开关于的网页" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tp0-X8-o7O">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jx4-Dl-6gW">
+                                <rect key="frame" x="319" y="5" width="107" height="32"/>
+                                <buttonCell key="cell" type="push" title="去感谢界面" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Gel-dK-jh0">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="2TF-lX-2bK"/>
+                            <constraint firstAttribute="centerY" secondItem="I8x-gV-Mxa" secondAttribute="centerY" id="Br5-tw-7wb"/>
+                            <constraint firstItem="Jx4-Dl-6gW" firstAttribute="leading" secondItem="I8x-gV-Mxa" secondAttribute="trailing" constant="12" id="FdC-nO-uHF"/>
+                            <constraint firstAttribute="trailing" secondItem="I8x-gV-Mxa" secondAttribute="trailing" priority="749" constant="20" id="PC3-xh-4AM"/>
+                            <constraint firstAttribute="centerY" secondItem="Jx4-Dl-6gW" secondAttribute="centerY" id="Z4K-Cp-QIy"/>
+                            <constraint firstAttribute="trailing" secondItem="Jx4-Dl-6gW" secondAttribute="trailing" constant="20" id="sNR-Db-RNo"/>
+                        </constraints>
+                    </customView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="vX6-Gb-GdX" secondAttribute="bottom" constant="20" symbolic="YES" id="7Ql-xN-Amz"/>
+                    <constraint firstItem="e4U-Rr-jCu" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" symbolic="YES" id="Vkm-gp-feN"/>
+                    <constraint firstItem="vX6-Gb-GdX" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" symbolic="YES" id="fmN-mN-nMU"/>
+                    <constraint firstItem="e4U-Rr-jCu" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" symbolic="YES" id="uQJ-Zv-n6B"/>
+                    <constraint firstAttribute="trailing" secondItem="e4U-Rr-jCu" secondAttribute="trailing" constant="20" symbolic="YES" id="xEY-fh-fnm"/>
+                    <constraint firstAttribute="trailing" secondItem="vX6-Gb-GdX" secondAttribute="trailing" constant="20" symbolic="YES" id="ytp-sp-TEW"/>
+                    <constraint firstItem="vX6-Gb-GdX" firstAttribute="top" secondItem="e4U-Rr-jCu" secondAttribute="bottom" id="zsQ-Z9-GKd"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="147"/>
+        </window>
+    </objects>
+</document>
