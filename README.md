@@ -105,22 +105,3 @@ self.aboutWindowController.delegate = self;
 }
 ```
 
-Thanks to [@balthisar](https://github.com/balthisar) for adding this.
-
-# Localization
-
-Add the following lines to your Localizable.string to change these values, or localize them.
-
-```
-/* Version %@ (Build %@), displayed in the about window */
-"Version %@ (Build %@)" = "v%@ (%@)";
-
-/* Caption on the 'Visit the %@ Website' button in the about window */
-"Visit the %@ Website" = "Visit %@'s Website";
-
-/* Caption of the 'Acknowledgments' button in the about window */
-"Acknowledgments" = "Acknowledgments";
-
-/* Caption of the 'Credits' button in the about window when acknowledgments are shown when useTextViewForAcknowledgments is YES. */
-"Credits" = "Credits";
-```
