@@ -11,7 +11,6 @@ import Foundation
 
 extension String{
     var path: String{
-       // "file://\(self)"
-        return self
+        "file://\(self)"
     }
 }

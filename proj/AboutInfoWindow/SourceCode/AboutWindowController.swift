@@ -86,6 +86,10 @@ class AboutWindowController: NSWindowController {
     @IBOutlet weak var acknowlesgeScroll: NSScrollView!
     
     
+    
+    @IBOutlet var acknowlesgeTextView: NSTextView!
+    @IBOutlet var creditTextView: NSTextView!
+    
 
     override func windowDidLoad() {
         super.windowDidLoad()
@@ -100,6 +104,14 @@ class AboutWindowController: NSWindowController {
             textView.textStorage?.append(acknowledgment)
         }
         
+        
+        // Disable editing
+        
+        // Somehow IB checkboxes are not working
+        creditTextView.isEditable = false
+        
+        // Somehow IB checkboxes are not working
+        acknowlesgeTextView.isEditable = false
     }
     
     
