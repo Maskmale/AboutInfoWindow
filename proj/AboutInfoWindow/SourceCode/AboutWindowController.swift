@@ -20,24 +20,24 @@ class AboutWindowController: NSWindowController {
      *  The application name.
      *  Default: CFBundleName
      */
-    var appName = BundleInfo.get.appName
+    let appName = BundleInfo.get.appName
 
     /**
      *  The application version.
      *  Default: "Version %@ (Build %@)", CFBundleVersion, CFBundleShortVersionString
      */
-    var appVersion = BundleInfo.get.appVersion
+    let appVersion = BundleInfo.get.appVersion
     /**
      *  The copyright line.
      *  Default: NSHumanReadableCopyright
      */
-    var appCopyright = BundleInfo.get.appCopyright
+    let appCopyright = BundleInfo.get.appCopyright
 
     /**
      *  The credits.
      *  Default: contents of file at [[NSBundle mainBundle] pathForResource:@"Credits" ofType:@"rtf"];
      */
-    var appCredits = BundleInfo.get.appCredits
+    let appCredits = BundleInfo.get.appCredits
 
     /**
      *  The URL pointing to the app's website.
@@ -49,7 +49,8 @@ class AboutWindowController: NSWindowController {
      *  The path to the file that contains the acknowledgments.
      *  Default: [[NSBundle mainBundle] pathForResource:@"Acknowledgments" ofType:@"rtf"];
      */
-    var acknowledgmentsPath = BundleInfo.get.acknowledgmentsPath
+    let acknowledgmentPath = BundleInfo.get.acknowledgmentPath
+    let acknowledgment = BundleInfo.get.acknowledgment
 
     /**
      *  If set to YES acknowledgments are shown in a text view, inside the window. Otherwise an external editor is launched.
@@ -78,8 +79,11 @@ class AboutWindowController: NSWindowController {
     
     
     @IBOutlet var infoView: NSView!
-    @IBOutlet var acknowledgmentsView: NSView!
     
+    
+    
+    @IBOutlet var acknowledgmentsView: NSView!
+    @IBOutlet weak var acknowlesgeScroll: NSScrollView!
     
     
 
@@ -92,7 +96,9 @@ class AboutWindowController: NSWindowController {
         versionLabel.stringValue = appVersion
         copyrightLabel.stringValue = appCopyright
         
-        
+        if let textView = acknowlesgeScroll.documentView as? NSTextView{
+            textView.textStorage?.append(acknowledgment)
+        }
         
     }
     
@@ -143,7 +149,7 @@ class AboutWindowController: NSWindowController {
         }
         else{
             // Load in default editor
-            NSWorkspace.shared.openFile(acknowledgmentsPath)
+            NSWorkspace.shared.openFile(acknowledgmentPath)
         }
     }
  

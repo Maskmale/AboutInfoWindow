@@ -15,6 +15,10 @@ class ViewController: NSViewController {
     
     
     
+    
+    var couldResize = false
+    var willUseTextView = false
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +34,32 @@ class ViewController: NSViewController {
     
     
     @IBAction func showAboutWindow(_ sender: NSButton) {
+        var mask = NSWindow.StyleMask.resizable
+        if !couldResize{
+            mask = []
+        }
+        aboutWindow.window?.styleMask = mask
+        aboutWindow.appWebsiteURL = URL(string: "https://www.baidu.com")
+        aboutWindow.useTextViewForAcknowledgments = willUseTextView
         aboutWindow.showWindow(nil)
     }
     
     
     
+//MARK: - Resizable
+    @IBAction func doResizable(_ sender: NSButton){
+        couldResize.toggle()
+    }
     
     
+    @IBAction func useTextView(_ sender: NSButton){
+        willUseTextView.toggle()
+    }
+    
+    
+    
+    
+
 
     override var representedObject: Any? {
         didSet {

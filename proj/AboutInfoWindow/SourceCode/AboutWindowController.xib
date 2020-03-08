@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="acknowledgmentsButton" destination="Jx4-Dl-6gW" id="WcG-FB-SUc"/>
                 <outlet property="acknowledgmentsView" destination="x1p-Gr-Jdl" id="AVq-Xf-CTh"/>
+                <outlet property="acknowlesgeScroll" destination="vzt-kv-FiF" id="vb5-8K-BPX"/>
                 <outlet property="copyrightLabel" destination="B5V-U5-2LA" id="sVf-H7-JFg"/>
                 <outlet property="infoView" destination="llG-HS-qSr" id="loY-h7-XcT"/>
                 <outlet property="nameLabel" destination="ytc-00-h5g" id="Mar-k8-4aG"/>
@@ -24,7 +25,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -39,7 +40,7 @@
                                 <rect key="frame" x="292" y="5" width="67" height="32"/>
                                 <buttonCell key="cell" type="push" title="更多" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tp0-X8-o7O">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="label" size="13"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="visitWebsite:" target="-2" id="pRa-hT-Ouk"/>
@@ -49,7 +50,7 @@
                                 <rect key="frame" x="359" y="5" width="67" height="32"/>
                                 <buttonCell key="cell" type="push" title="致谢" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Gel-dK-jh0">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="label" size="13"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="showAcknowledgments:" target="-2" id="gZw-7o-eLj"/>
@@ -84,6 +85,35 @@
         <customView id="x1p-Gr-Jdl" userLabel="acknowledgmentsView">
             <rect key="frame" x="0.0" y="0.0" width="560" height="270"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="vzt-kv-FiF">
+                    <rect key="frame" x="0.0" y="0.0" width="560" height="270"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <clipView key="contentView" drawsBackground="NO" id="KxW-Qb-pT9">
+                        <rect key="frame" x="0.0" y="0.0" width="560" height="270"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView editable="NO" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="OhM-yl-4Da">
+                                <rect key="frame" x="0.0" y="0.0" width="560" height="270"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <size key="minSize" width="560" height="270"/>
+                                <size key="maxSize" width="560" height="10000000"/>
+                                <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            </textView>
+                        </subviews>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="JCC-Jm-cQe">
+                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="RcW-z3-fWg">
+                        <rect key="frame" x="224" y="1" width="15" height="133"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+            </subviews>
             <point key="canvasLocation" x="-56009" y="17604"/>
         </customView>
         <customView id="llG-HS-qSr" userLabel="infoView">
@@ -133,11 +163,11 @@
                             </textView>
                         </subviews>
                     </clipView>
-                    <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="poy-1K-yVf" customClass="DCOTransparentScroller">
+                    <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="poy-1K-yVf">
                         <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="3yh-W8-YMN" customClass="DCOTransparentScroller">
+                    <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="3yh-W8-YMN">
                         <rect key="frame" x="295" y="0.0" width="15" height="174"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
@@ -145,7 +175,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="B5V-U5-2LA">
                     <rect key="frame" x="228" y="10" width="314" height="14"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="5UJ-to-s8k">
-                        <font key="font" metaFont="controlContent" size="11"/>
+                        <font key="font" metaFont="message" size="11"/>
                         <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>

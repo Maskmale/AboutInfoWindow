@@ -16,7 +16,8 @@ struct BundleInfo {
     let appVersion: String
     let appCopyright: String
     
-    let acknowledgmentsPath: String
+    let acknowledgmentPath: String
+    let acknowledgment: NSAttributedString
     let appCredits: NSAttributedString
     
     init() {
@@ -24,7 +25,8 @@ struct BundleInfo {
         var version = ""
         var copyright = ""
         
-        var acknowledgment = ""
+        var thank = ""
+        var thankFull = NSAttributedString(string: "Nothing")
         var credit = NSAttributedString(string: "Nothing")
         
         // Load variables
@@ -45,14 +47,20 @@ struct BundleInfo {
               }
             
               // Set acknowledgments
-              if let acknowledge = Bundle.main.path(forResource: "Acknowledgments", ofType: "rtf"){
-                  acknowledgment = acknowledge
+              if let path = Bundle.main.path(forResource: "Acknowledgments", ofType: "rtf"), let address = URL(string: path){
+                  do {
+                      thank = path
+                      thankFull = try NSAttributedString(url: address, options: [:], documentAttributes: nil)
+                  } catch let error as NSError {
+                      print(error.debugDescription)
+                  }
+          
               }
             
               // Set credits
-              if let creditInfo = Bundle.main.path(forResource: "Credits", ofType: "rtf"), let path = URL(string: creditInfo){
+              if let path = Bundle.main.path(forResource: "Credits", ofType: "rtf"), let address = URL(string: path){
                   do {
-                      credit = try NSAttributedString(url: path, options: [:], documentAttributes: nil)
+                      credit = try NSAttributedString(url: address, options: [:], documentAttributes: nil)
                   } catch let error as NSError {
                       print(error.debugDescription)
                   }
@@ -63,7 +71,8 @@ struct BundleInfo {
         appVersion = version
         appCopyright = copyright
   
-        acknowledgmentsPath = acknowledgment
+        acknowledgmentPath = thank
+        acknowledgment = thankFull
         appCredits = credit
     }
 }
