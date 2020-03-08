@@ -9,7 +9,7 @@ a replacement for the standard About dialog.
 
 It adds the option to open acknowledgments and visit the website by clicking a button.
 
-![DCOAboutWindow in action](https://raw.github.com/DangerCove/DCOAboutWindow/master/screenshots/DCOAboutWindow.png)
+![DCOAboutWindow in action](https://raw.github.com/coyingcat/AboutInfoWindow/master/imgs/0.png)
 
 
 ## Showing acknowledgments
