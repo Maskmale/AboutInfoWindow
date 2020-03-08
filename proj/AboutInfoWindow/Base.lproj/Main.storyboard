@@ -31,7 +31,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="入口窗口" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
+                    <window key="window" title="入口" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -57,27 +57,27 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jAS-NF-emH">
-                                <rect key="frame" x="200" y="153" width="81" height="24"/>
-                                <buttonCell key="cell" type="square" title="去关于界面" bezelStyle="shadowlessSquare" imagePosition="left" borderStyle="border" inset="2" id="SQB-7d-n5d">
+                                <rect key="frame" x="220" y="153" width="41" height="24"/>
+                                <buttonCell key="cell" type="square" title="关于" bezelStyle="shadowlessSquare" imagePosition="left" borderStyle="border" inset="2" id="SQB-7d-n5d">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="label" size="13"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="showAboutWindow:" target="XfG-lQ-9wD" id="Niy-6f-dDX"/>
                                 </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="wrI-yp-OhK">
-                                <rect key="frame" x="136" y="101" width="208" height="18"/>
-                                <buttonCell key="cell" type="check" title="设置要去的界面，可不可以拉伸" bezelStyle="regularSquare" imagePosition="left" inset="2" id="dR0-17-YDS">
+                                <rect key="frame" x="142" y="101" width="195" height="18"/>
+                                <buttonCell key="cell" type="check" title="设置关于窗口，可不可以拉伸" bezelStyle="regularSquare" imagePosition="left" inset="2" id="dR0-17-YDS">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="label" size="13"/>
                                 </buttonCell>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="hur-OO-8hN">
-                                <rect key="frame" x="136" y="71" width="182" height="18"/>
-                                <buttonCell key="cell" type="check" title="设置要去的界面，致谢方式" bezelStyle="regularSquare" imagePosition="left" inset="2" id="c5k-WU-9Ik">
+                                <rect key="frame" x="142" y="71" width="168" height="18"/>
+                                <buttonCell key="cell" type="check" title="设置关于窗口的致谢方式" bezelStyle="regularSquare" imagePosition="left" inset="2" id="c5k-WU-9Ik">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="label" size="13"/>
                                 </buttonCell>
                             </button>
                         </subviews>
