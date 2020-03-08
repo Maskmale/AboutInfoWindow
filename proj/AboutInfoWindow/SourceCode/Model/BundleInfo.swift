@@ -47,9 +47,9 @@ struct BundleInfo {
               }
             
               // Set acknowledgments
-              if let path = Bundle.main.path(forResource: "Acknowledgments", ofType: "rtf"), let address = URL(string: path){
+            if let path = Bundle.main.path(forResource: "Acknowledgments", ofType: "rtf"), let address = URL(string: path.path){
                   do {
-                      thank = path
+                    thank = path.path
                       thankFull = try NSAttributedString(url: address, options: [:], documentAttributes: nil)
                   } catch let error as NSError {
                       print(error.debugDescription)
@@ -58,7 +58,7 @@ struct BundleInfo {
               }
             
               // Set credits
-              if let path = Bundle.main.path(forResource: "Credits", ofType: "rtf"), let address = URL(string: path){
+            if let path = Bundle.main.path(forResource: "Credits", ofType: "rtf"), let address = URL(string: path.path){
                   do {
                       credit = try NSAttributedString(url: address, options: [:], documentAttributes: nil)
                   } catch let error as NSError {
