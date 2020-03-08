@@ -10,7 +10,7 @@ a replacement for the standard About dialog.
 It adds the option to open acknowledgments and visit the website by clicking a button.
 
 ![DCOAboutWindow in action](https://raw.github.com/DangerCove/DCOAboutWindow/master/screenshots/DCOAboutWindow.png)
-![DCOAboutWindow in Dark Mode](https://raw.github.com/DangerCove/DCOAboutWindow/master/screenshots/DCOAboutWindow-DarkMode.png)
+
 
 ## Showing acknowledgments
 
@@ -25,83 +25,51 @@ Remember to hook it up to the 'About [app name]' menu item or a button.
 <hr>
 
 
-You can change values by setting properties on `DCOAboutWindowController`:
+You can change values by setting properties on `AboutWindowController`:
 
 ```
-/**
- *  The application name.
- *  Default: CFBundleName
- */
-@property (copy) NSString *appName;
 
-/**
- *  The application version.
- *  Default: "Version %@ (Build %@)", CFBundleVersion, CFBundleShortVersionString
- */
-@property (copy) NSString *appVersion;
+    /**
+     *  应用名，The application name.
+     *  Default: CFBundleName
+     */
+    let appName = BundleInfo.get.appName
 
-/**
- *  The copyright line.
- *  Default: NSHumanReadableCopyright
- */
-@property (copy) NSString *appCopyright;
+    /**
+     *  应用版本，The application version.
+     *  Default: "Version %@ (Build %@)", CFBundleVersion, CFBundleShortVersionString
+     */
+    let appVersion = BundleInfo.get.appVersion
+    /**
+     *  应用版权，The copyright line.
+     *  Default: NSHumanReadableCopyright
+     */
+    let appCopyright = BundleInfo.get.appCopyright
 
-/**
- *  The credits.
- *  Default: [[NSBundle mainBundle] pathForResource:@"Credits" ofType:@"rtf"];
- */
-@property (copy) NSAttributedString *appCredits;
+    /**
+     *  应用信用: The credits.
+     *  Default: contents of file at [[NSBundle mainBundle] pathForResource:@"Credits" ofType:@"rtf"];
+     */
+    let appCredits = BundleInfo.get.appCredits
 
-/**
- *  The URL pointing to the app's website.
- *  Default: none
- */
-@property (strong) NSURL *appWebsiteURL;
+    /**
+     *  应用网址： The URL pointing to the app's website.
+     *  Default: none
+     */
+    var appWebsiteURL: URL?
 
-/**
- *  The path to the file that contains the acknowledgments.
- *  Default: [[NSBundle mainBundle] pathForResource:@"Acknowledgments" ofType:@"rtf"];
- */
-@property (nonatomic, copy) NSString *acknowledgmentsPath;
+    /**
+     *  感谢： The path to the file that contains the acknowledgments.
+     *  Default: [[NSBundle mainBundle] pathForResource:@"Acknowledgments" ofType:@"rtf"];
+     */
+    let acknowledgmentPath = BundleInfo.get.acknowledgmentPath
+    let acknowledgment = BundleInfo.get.acknowledgment
 
-/**
- *  If set to YES acknowledgments are shown in a text view, inside the window. Otherwise an external editor is launched.
- *  Default: NO;
- */
-@property (assign) BOOL useTextViewForAcknowledgments;
+    /**
+     *  设置致谢文件的打开方式，打开文件，还是窗口内展示
+     *  If set to YES acknowledgments are shown in a text view, inside the window. Otherwise an external editor is launched.
+     *  Default: NO;
+     */
+    var useTextViewForAcknowledgments = false
+
 ```
-
-## Pre-processing (for Dark Mode)
-
-You can pre-process the `NSAttributedString` containing the app credits using a delegate. This is great for making the about window play nice with Mojave's Dark Mode. Here's how it works:
-
-```objc
-// Conform to the DCOStringPreprocessingProtocol
-@interface DCDAppDelegate() <DCOStringPreprocessingProtocol>
-
-self.aboutWindowController = [[DCOAboutWindowController alloc] init];
-// Set the delegate
-self.aboutWindowController.delegate = self;
-
-#pragma mark - DCOStringPreprocessingProtocol
-
-- (NSAttributedString *)preprocessAppCredits:(NSAttributedString *)appCredits {
-    NSMutableAttributedString *mutableCredits = [appCredits mutableCopy];
-    
-    NSDictionary *attributes = @{ NSForegroundColorAttributeName : [NSColor textColor] };
-    [mutableCredits addAttributes:attributes range:NSMakeRange(0, mutableCredits.length)];
-    
-    return [mutableCredits copy];
-}
-
-// Optionally pre-process the acknowledgments as well
-- (NSAttributedString *)preprocessAppAcknowledgments:(NSAttributedString *)appAcknowledgments {
-    NSMutableAttributedString *mutableAcknowledgments = [appAcknowledgments mutableCopy];
-    
-    NSDictionary *attributes = @{ NSForegroundColorAttributeName : [NSColor textColor] };
-    [mutableAcknowledgments addAttributes:attributes range:NSMakeRange(0, mutableCredits.length)];
-    
-    return [mutableAcknowledgments copy];
-}
-```
-

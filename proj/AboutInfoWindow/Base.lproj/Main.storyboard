@@ -77,10 +77,10 @@
                                 </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="hur-OO-8hN">
-                                <rect key="frame" x="142" y="71" width="168" height="18"/>
-                                <buttonCell key="cell" type="check" title="设置关于窗口的致谢方式" bezelStyle="regularSquare" imagePosition="left" inset="2" id="c5k-WU-9Ik">
+                                <rect key="frame" x="142" y="71" width="248" height="18"/>
+                                <buttonCell key="cell" type="check" title="设置关于窗口，致谢是否通过本地文件" bezelStyle="regularSquare" imagePosition="left" inset="2" id="c5k-WU-9Ik">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="useTextView:" target="XfG-lQ-9wD" id="i9q-va-zIs"/>

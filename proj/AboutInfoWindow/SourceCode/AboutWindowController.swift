@@ -17,42 +17,43 @@ class AboutWindowController: NSWindowController {
     
 
     /**
-     *  The application name.
+     *  应用名，The application name.
      *  Default: CFBundleName
      */
     let appName = BundleInfo.get.appName
 
     /**
-     *  The application version.
+     *  应用版本，The application version.
      *  Default: "Version %@ (Build %@)", CFBundleVersion, CFBundleShortVersionString
      */
     let appVersion = BundleInfo.get.appVersion
     /**
-     *  The copyright line.
+     *  应用版权，The copyright line.
      *  Default: NSHumanReadableCopyright
      */
     let appCopyright = BundleInfo.get.appCopyright
 
     /**
-     *  The credits.
+     *  应用信用: The credits.
      *  Default: contents of file at [[NSBundle mainBundle] pathForResource:@"Credits" ofType:@"rtf"];
      */
     let appCredits = BundleInfo.get.appCredits
 
     /**
-     *  The URL pointing to the app's website.
+     *  应用网址： The URL pointing to the app's website.
      *  Default: none
      */
     var appWebsiteURL: URL?
 
     /**
-     *  The path to the file that contains the acknowledgments.
+     *  感谢： The path to the file that contains the acknowledgments.
      *  Default: [[NSBundle mainBundle] pathForResource:@"Acknowledgments" ofType:@"rtf"];
      */
     let acknowledgmentPath = BundleInfo.get.acknowledgmentPath
     let acknowledgment = BundleInfo.get.acknowledgment
 
     /**
+     *  设置致谢文件的打开方式，打开文件，还是窗口内展示
      *  If set to YES acknowledgments are shown in a text view, inside the window. Otherwise an external editor is launched.
      *  Default: NO;
      */
