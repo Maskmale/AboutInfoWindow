@@ -12,8 +12,6 @@ class TransparentScroller: NSScroller {
 
     override func draw(_ dirtyRect: NSRect) {
         self.drawKnob()
-        // super.draw(dirtyRect)
-        
     }
     
 }

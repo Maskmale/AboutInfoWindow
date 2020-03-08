@@ -24,9 +24,9 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        
-        
+        if let window = NSApplication.shared.windows.first{
+            print(window.styleMask)
+        }
       
     }
     
@@ -34,9 +34,9 @@ class ViewController: NSViewController {
     
     
     @IBAction func showAboutWindow(_ sender: NSButton) {
-        var mask = NSWindow.StyleMask.resizable
-        if !couldResize{
-            mask = []
+        var mask:NSWindow.StyleMask = [.closable, .titled, .borderless]
+        if couldResize{
+            mask.insert(NSWindow.StyleMask.resizable)
         }
         aboutWindow.window?.styleMask = mask
         aboutWindow.appWebsiteURL = URL(string: "https://www.baidu.com")
