@@ -9,7 +9,6 @@
             <connections>
                 <outlet property="acknowledgmentsButton" destination="Jx4-Dl-6gW" id="WcG-FB-SUc"/>
                 <outlet property="acknowledgmentsView" destination="x1p-Gr-Jdl" id="AVq-Xf-CTh"/>
-                <outlet property="acknowlesgeScroll" destination="vzt-kv-FiF" id="vb5-8K-BPX"/>
                 <outlet property="acknowlesgeTextView" destination="OhM-yl-4Da" id="dhy-Gy-5fQ"/>
                 <outlet property="copyrightLabel" destination="B5V-U5-2LA" id="sVf-H7-JFg"/>
                 <outlet property="creditTextView" destination="D0j-Wq-559" id="0t6-gy-rZh"/>
@@ -102,6 +101,9 @@
                                 <size key="minSize" width="520" height="230"/>
                                 <size key="maxSize" width="560" height="10000000"/>
                                 <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <connections>
+                                    <binding destination="-2" name="attributedString" keyPath="self.acknowledgment" id="qLS-Mb-DMV"/>
+                                </connections>
                             </textView>
                         </subviews>
                     </clipView>
