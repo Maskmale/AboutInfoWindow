@@ -28,7 +28,12 @@ class ViewController: NSViewController {
             print(window.styleMask)
         }
       
+        
+        
+        
     }
+    
+    
     
     
     
