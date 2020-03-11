@@ -14,6 +14,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let status = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     let customMenu = NSMenu()
 
+    // 维持生命周期
+    let aboutWindow = AboutWindowController(windowNibName: .about)
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         
@@ -32,7 +35,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         //NSMenu
         customMenu.title = "Title"
 
-        customMenu.addItem(withTitle: "退出", action: #selector(NSApp.terminate(_:)), keyEquivalent: "q")
+        customMenu.addItem(withTitle: "退出", action: #selector(NSApp.terminate(_:)), keyEquivalent: "k")
         status.menu = customMenu
             
         
@@ -48,6 +51,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func statusBarClicked(_ sender:NSStatusItem){
         print("statusBarClicked")
     }
+    
+    
+    @IBAction func enterAbout(_ sender: NSMenuItem) {
+        
+        
+        let mask:NSWindow.StyleMask = [.closable, .titled, .borderless, .resizable]
+        aboutWindow.window?.styleMask = mask
+        aboutWindow.appWebsiteURL = URL.demo
+        aboutWindow.showWindow(nil)
+        
+        
+    }
+    
+    
+    
+    @IBAction func enterWeWeb(_ sender: NSMenuItem) {
+        if let web = URL.demo{
+            NSWorkspace.shared.open(web)
+        }
+    }
+    
     
 
 }

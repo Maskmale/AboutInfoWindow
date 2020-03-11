@@ -13,7 +13,22 @@
                         <items>
                             <menuItem title="入口窗口" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="入口窗口" systemMenu="apple" id="uQy-DD-JDr"/>
+                                <menu key="submenu" title="入口窗口" systemMenu="apple" id="uQy-DD-JDr">
+                                    <items>
+                                        <menuItem title="进入关于" keyEquivalent="g" id="mmr-GY-Doj">
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="enterAbout:" target="Voe-Tx-rLC" id="zkM-CK-MgT"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="进入官网" keyEquivalent="a" id="szk-hT-dOq">
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="enterWeWeb:" target="Voe-Tx-rLC" id="52O-3Q-mf5"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
                             </menuItem>
                         </items>
                     </menu>
@@ -80,7 +95,7 @@
                                 <rect key="frame" x="142" y="71" width="248" height="18"/>
                                 <buttonCell key="cell" type="check" title="设置关于窗口，致谢是否通过本地文件" bezelStyle="regularSquare" imagePosition="left" inset="2" id="c5k-WU-9Ik">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="useTextView:" target="XfG-lQ-9wD" id="i9q-va-zIs"/>

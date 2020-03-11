@@ -10,12 +10,7 @@ import Cocoa
 
 class ViewController: NSViewController {
     
-    
-    lazy var aboutWindow = AboutWindowController(windowNibName: .about)
-    
-    
-    
-    
+    let aboutWindow = AboutWindowController(windowNibName: .about)
     var couldResize = false
     var willUseTextView = false
     
@@ -39,12 +34,13 @@ class ViewController: NSViewController {
     
     
     @IBAction func showAboutWindow(_ sender: NSButton) {
+        
         var mask:NSWindow.StyleMask = [.closable, .titled, .borderless]
         if couldResize{
             mask.insert(NSWindow.StyleMask.resizable)
         }
         aboutWindow.window?.styleMask = mask
-        aboutWindow.appWebsiteURL = URL(string: "https://www.baidu.com")
+        aboutWindow.appWebsiteURL = URL.demo
         aboutWindow.useTextViewForAcknowledgments = willUseTextView
         aboutWindow.showWindow(nil)
     }

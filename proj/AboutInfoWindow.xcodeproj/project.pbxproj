@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26413845241916950047FBEF /* UrlAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26413844241916950047FBEF /* UrlAdd.swift */; };
 		267CB20D2414A7BB005577AA /* NibAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267CB2052414A7BB005577AA /* NibAdd.swift */; };
 		267CB20E2414A7BB005577AA /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267CB2062414A7BB005577AA /* AboutWindowController.swift */; };
 		267CB20F2414A7BB005577AA /* AboutWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 267CB2072414A7BB005577AA /* AboutWindowController.xib */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26413844241916950047FBEF /* UrlAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlAdd.swift; sourceTree = "<group>"; };
 		267CB2052414A7BB005577AA /* NibAdd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibAdd.swift; sourceTree = "<group>"; };
 		267CB2062414A7BB005577AA /* AboutWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutWindowController.swift; sourceTree = "<group>"; };
 		267CB2072414A7BB005577AA /* AboutWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutWindowController.xib; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				267CB2052414A7BB005577AA /* NibAdd.swift */,
 				267CB21324153119005577AA /* Stringfy.swift */,
+				26413844241916950047FBEF /* UrlAdd.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				267CB21724153548005577AA /* TransparentScroller.swift in Sources */,
 				267CB20D2414A7BB005577AA /* NibAdd.swift in Sources */,
 				267CB2102414A7BB005577AA /* BundleInfo.swift in Sources */,
+				26413845241916950047FBEF /* UrlAdd.swift in Sources */,
 				267CB20E2414A7BB005577AA /* AboutWindowController.swift in Sources */,
 				267CB21424153119005577AA /* Stringfy.swift in Sources */,
 				2691B52424140D5600750D22 /* ViewController.swift in Sources */,
