@@ -22,8 +22,10 @@ class ViewController: NSViewController {
         if let window = NSApplication.shared.windows.first{
             print(window.styleMask)
         }
-      
         
+        if let window = view.window{
+            print(window.styleMask)
+        }
         
         
     }
@@ -34,11 +36,24 @@ class ViewController: NSViewController {
     
     
     @IBAction func showAboutWindow(_ sender: NSButton) {
+        if let window = view.window{
+            print(window.styleMask)
+        }
+
         
         var mask:NSWindow.StyleMask = [.closable, .titled, .borderless]
+        /*
+         // print values
+         
+        mask = [.closable]
+        mask = [.titled]
+        mask = [.borderless]
+ 
+        */
         if couldResize{
             mask.insert(NSWindow.StyleMask.resizable)
         }
+        print(mask)
         aboutWindow.window?.styleMask = mask
         aboutWindow.appWebsiteURL = URL.demo
         aboutWindow.useTextViewForAcknowledgments = willUseTextView
