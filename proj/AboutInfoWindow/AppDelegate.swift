@@ -11,10 +11,11 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    // 维持生命周期
     let status = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     let customMenu = NSMenu()
 
-    // 维持生命周期
+    
     let aboutWindow = AboutWindowController(windowNibName: .about)
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -52,20 +53,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         print("statusBarClicked")
     }
     
-    
+    // 进入窗口
     @IBAction func enterAbout(_ sender: NSMenuItem) {
-        
         
         let mask:NSWindow.StyleMask = [.closable, .titled, .borderless, .resizable]
         aboutWindow.window?.styleMask = mask
         aboutWindow.appWebsiteURL = URL.demo
         aboutWindow.showWindow(nil)
         
-        
     }
     
     
-    
+    // 进入官网
     @IBAction func enterWeWeb(_ sender: NSMenuItem) {
         if let web = URL.demo{
             NSWorkspace.shared.open(web)
