@@ -1,3 +1,7 @@
+
+
+博客链接，[认识 Cocoa App 的开发：Cocoa Binding 、Window Control 、菜单栏...](https://juejin.im/post/5e68fa5be51d45270764f0e4)
+
 # AboutInfoWindow
 Swift 5 updated , DangerCove/DCOAboutWindow
 
