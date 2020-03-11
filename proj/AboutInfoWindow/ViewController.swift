@@ -19,6 +19,9 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        /*
+        // print values
+ 
         if let window = NSApplication.shared.windows.first{
             print(window.styleMask)
         }
@@ -27,7 +30,7 @@ class ViewController: NSViewController {
             print(window.styleMask)
         }
         
-        
+        */
     }
     
     
@@ -36,14 +39,14 @@ class ViewController: NSViewController {
     
     
     @IBAction func showAboutWindow(_ sender: NSButton) {
-        if let window = view.window{
-            print(window.styleMask)
-        }
-
         
         var mask:NSWindow.StyleMask = [.closable, .titled, .borderless]
         /*
          // print values
+         
+        if let window = view.window{
+            print(window.styleMask)
+        }
          
         mask = [.closable]
         mask = [.titled]
