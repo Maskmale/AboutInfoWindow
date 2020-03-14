@@ -8,8 +8,12 @@
 
 import Cocoa
 
+typealias ContentBundle = (title: String, contents: [String])
+
+
+
 protocol DragViewProxy: class {
-    func dragDone(by view: DragView, get items: [String])
+    func dragDone(by view: DragView, get items: ContentBundle)
 }
 
 class DragView: NSView {
@@ -19,7 +23,7 @@ class DragView: NSView {
     private var dragEntered = false{
         didSet{
             needsDisplay = true
-            NSUserDefaultsController.shared.setValue(dragEntered, forKey: UserDefaultK.entryLabelShow)
+            
             
         }
     }
@@ -67,20 +71,24 @@ extension DragView{
     //MARK:- Managing a Dragging Session After an Image Is Released
     
     override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
-        let fetched = sender.draggingPasteboard.readObjects(forClasses:  [NSURL.self], options: nil)?
-            .map({ (argv) -> String? in
-                guard let url = argv as? URL else{
-                    return nil
-                }
-                return url.path
-            }).compactMap({$0})
+       
+        if let src = sender.draggingPasteboard.readObjects(forClasses:  [NSURL.self], options: nil)?.first as? URL {
+            let properties: [URLResourceKey] = [ URLResourceKey.localizedNameKey, URLResourceKey.creationDateKey, URLResourceKey.localizedTypeDescriptionKey]
             
-        guard let result = fetched else{
-            return false
+            do {
+                let paths = try FileManager.default.contentsOfDirectory(at: src, includingPropertiesForKeys: properties, options: [FileManager.DirectoryEnumerationOptions.skipsHiddenFiles])
+                
+                let result: ContentBundle = (src.lastPathComponent, paths.map({$0.lastPathComponent}))
+                
+                delegate?.dragDone(by: self, get: result)
+                
+                return true
+            } catch  {  }
+            
         }
-        // handle the result
-        delegate?.dragDone(by: self, get: result)
-        print(result)
-        return true
+        return false
+        
+
+        
     }
 }

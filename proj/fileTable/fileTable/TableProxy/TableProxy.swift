@@ -163,3 +163,15 @@ extension TableProxy{
         return (section: 0, row: 0)
     }
 }
+
+
+
+extension TableProxy{
+
+    func update(content info: ContentBundle){
+        data.headerTitle = .title(info.title)
+        data.contents = info.contents
+    }
+
+
+}

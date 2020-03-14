@@ -13,8 +13,21 @@ class ViewController: NSViewController {
     
     
     @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var dragView: DragView!
+    
+    
     
     let tbProxy = TableProxy()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +35,17 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
         tableView.delegate = tbProxy
         tableView.dataSource = tbProxy
+        dragView.delegate = self
+        
+        
         tableView.reloadData()
     }
+    
+    
+    
+    
+    
+    
 
     override var representedObject: Any? {
         didSet {
@@ -32,4 +54,19 @@ class ViewController: NSViewController {
     }
 
 
+}
+
+
+
+
+extension ViewController: DragViewProxy{
+    
+    func dragDone(by view: DragView, get info: ContentBundle) {
+        
+        tbProxy.update(content: info)
+        tableView.reloadData()
+        
+    }
+    
+    
 }
