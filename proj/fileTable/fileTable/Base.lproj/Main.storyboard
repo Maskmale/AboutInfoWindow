@@ -684,7 +684,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="拖拽与表格" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -712,14 +712,14 @@
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="uFn-it-YAz" customClass="DragView" customModule="fileTable" customModuleProvider="target">
                                 <rect key="frame" x="20" y="20" width="400" height="400"/>
                                 <subviews>
-                                    <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="13" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EK5-Ru-Hr1">
-                                        <rect key="frame" x="122" y="159" width="157" height="82"/>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="30" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EK5-Ru-Hr1">
+                                        <rect key="frame" x="113" y="148" width="174" height="104"/>
                                         <subviews>
-                                            <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="18" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UO5-0i-tp9">
-                                                <rect key="frame" x="0.0" y="0.0" width="32" height="82"/>
+                                            <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="40" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UO5-0i-tp9">
+                                                <rect key="frame" x="0.0" y="0.0" width="32" height="104"/>
                                                 <subviews>
                                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Xc-EV-CWo">
-                                                        <rect key="frame" x="0.0" y="50" width="32" height="32"/>
+                                                        <rect key="frame" x="0.0" y="72" width="32" height="32"/>
                                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSMultipleDocuments" id="bte-XV-M9P"/>
                                                     </imageView>
                                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hov-CR-qeC">
@@ -737,7 +737,7 @@
                                                 </customSpacing>
                                             </stackView>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SHq-Tv-eIq">
-                                                <rect key="frame" x="43" y="21" width="116" height="40"/>
+                                                <rect key="frame" x="60" y="32" width="116" height="40"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="拖到这里" id="4pL-4Q-dZm">
                                                     <font key="font" size="28" name="PingFangSC-Regular"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
