@@ -15,6 +15,9 @@
 		262A578C241D0EB700ED4A92 /* fileTableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262A578B241D0EB700ED4A92 /* fileTableUITests.swift */; };
 		262A579B241D12C500ED4A92 /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262A579A241D12C500ED4A92 /* DragView.swift */; };
 		269C9A03241D39D200B37EAD /* UserDefaultK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269C9A02241D39D200B37EAD /* UserDefaultK.swift */; };
+		269C9A06241D4C8600B37EAD /* TableProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269C9A05241D4C8600B37EAD /* TableProxy.swift */; };
+		269C9A08241D4CFD00B37EAD /* TableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269C9A07241D4CFD00B37EAD /* TableProtocol.swift */; };
+		269C9A0A241D4F3300B37EAD /* ExternCellViewID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269C9A09241D4F3300B37EAD /* ExternCellViewID.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		262A578D241D0EB700ED4A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		262A579A241D12C500ED4A92 /* DragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
 		269C9A02241D39D200B37EAD /* UserDefaultK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultK.swift; sourceTree = "<group>"; };
+		269C9A05241D4C8600B37EAD /* TableProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableProxy.swift; sourceTree = "<group>"; };
+		269C9A07241D4CFD00B37EAD /* TableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableProtocol.swift; sourceTree = "<group>"; };
+		269C9A09241D4F3300B37EAD /* ExternCellViewID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternCellViewID.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,7 @@
 		262A576C241D0EB300ED4A92 /* fileTable */ = {
 			isa = PBXGroup;
 			children = (
+				269C9A04241D4C7600B37EAD /* TableProxy */,
 				262A579C241D33A700ED4A92 /* Const */,
 				262A5799241D12B000ED4A92 /* View */,
 				262A576D241D0EB300ED4A92 /* AppDelegate.swift */,
@@ -142,8 +149,18 @@
 			isa = PBXGroup;
 			children = (
 				269C9A02241D39D200B37EAD /* UserDefaultK.swift */,
+				269C9A09241D4F3300B37EAD /* ExternCellViewID.swift */,
 			);
 			path = Const;
+			sourceTree = "<group>";
+		};
+		269C9A04241D4C7600B37EAD /* TableProxy */ = {
+			isa = PBXGroup;
+			children = (
+				269C9A05241D4C8600B37EAD /* TableProxy.swift */,
+				269C9A07241D4CFD00B37EAD /* TableProtocol.swift */,
+			);
+			path = TableProxy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,8 +293,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				269C9A0A241D4F3300B37EAD /* ExternCellViewID.swift in Sources */,
 				269C9A03241D39D200B37EAD /* UserDefaultK.swift in Sources */,
+				269C9A08241D4CFD00B37EAD /* TableProtocol.swift in Sources */,
 				262A5770241D0EB300ED4A92 /* ViewController.swift in Sources */,
+				269C9A06241D4C8600B37EAD /* TableProxy.swift in Sources */,
 				262A576E241D0EB300ED4A92 /* AppDelegate.swift in Sources */,
 				262A579B241D12C500ED4A92 /* DragView.swift in Sources */,
 			);

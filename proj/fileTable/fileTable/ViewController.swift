@@ -10,10 +10,19 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    
+    
+    @IBOutlet weak var tableView: NSTableView!
+    
+    let tbProxy = TableProxy()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        tableView.delegate = tbProxy
+        tableView.dataSource = tbProxy
+        tableView.reloadData()
     }
 
     override var representedObject: Any? {
@@ -24,4 +33,3 @@ class ViewController: NSViewController {
 
 
 }
-
