@@ -19,6 +19,8 @@ class DragView: NSView {
     private var dragEntered = false{
         didSet{
             needsDisplay = true
+            NSUserDefaultsController.shared.setValue(dragEntered, forKey: UserDefaultK.entryLabelShow)
+            
         }
     }
     
@@ -32,6 +34,28 @@ class DragView: NSView {
         super.init(coder: coder)
         let fileRegister = NSPasteboard.PasteboardType.fileURL
         registerForDraggedTypes([fileRegister])
+        
+        
+        let config = [UserDefaultK.entryLabelShow: true]
+        
+        if let path = Bundle.main.path(forResource: "UserDefaults", ofType: "plist"), let userDefaultsValuesDict = NSDictionary(contentsOfFile: path) as? [String : Any]{
+            
+                let content = userDefaultsValuesDict.merging(config) { (current, _) in current }
+            
+                 UserDefaults.standard.register(defaults: content)
+            
+        }
+        
+
+        
+        
+        
+        
+        
+       
+        NSUserDefaultsController.shared.initialValues = config
+        NSUserDefaultsController.shared.appliesImmediately = true
+ 
     }
     
     override func draw(_ dirtyRect: NSRect) {

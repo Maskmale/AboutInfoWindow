@@ -743,6 +743,9 @@
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
+                                                <connections>
+                                                    <binding destination="bdc-Oz-Oq7" name="hidden" keyPath="values.entryLabelShow" id="4Zr-D1-usl"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <visibilityPriorities>
@@ -844,6 +847,7 @@
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="bdc-Oz-Oq7"/>
             </objects>
             <point key="canvasLocation" x="75" y="850"/>
         </scene>

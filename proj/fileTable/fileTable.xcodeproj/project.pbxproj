@@ -14,6 +14,7 @@
 		262A5781241D0EB700ED4A92 /* fileTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262A5780241D0EB700ED4A92 /* fileTableTests.swift */; };
 		262A578C241D0EB700ED4A92 /* fileTableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262A578B241D0EB700ED4A92 /* fileTableUITests.swift */; };
 		262A579B241D12C500ED4A92 /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262A579A241D12C500ED4A92 /* DragView.swift */; };
+		269C9A03241D39D200B37EAD /* UserDefaultK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269C9A02241D39D200B37EAD /* UserDefaultK.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		262A578B241D0EB700ED4A92 /* fileTableUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fileTableUITests.swift; sourceTree = "<group>"; };
 		262A578D241D0EB700ED4A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		262A579A241D12C500ED4A92 /* DragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
+		269C9A02241D39D200B37EAD /* UserDefaultK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultK.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		262A576C241D0EB300ED4A92 /* fileTable */ = {
 			isa = PBXGroup;
 			children = (
+				262A579C241D33A700ED4A92 /* Const */,
 				262A5799241D12B000ED4A92 /* View */,
 				262A576D241D0EB300ED4A92 /* AppDelegate.swift */,
 				262A576F241D0EB300ED4A92 /* ViewController.swift */,
@@ -133,6 +136,14 @@
 				262A579A241D12C500ED4A92 /* DragView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		262A579C241D33A700ED4A92 /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				269C9A02241D39D200B37EAD /* UserDefaultK.swift */,
+			);
+			path = Const;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				269C9A03241D39D200B37EAD /* UserDefaultK.swift in Sources */,
 				262A5770241D0EB300ED4A92 /* ViewController.swift in Sources */,
 				262A576E241D0EB300ED4A92 /* AppDelegate.swift in Sources */,
 				262A579B241D12C500ED4A92 /* DragView.swift in Sources */,
