@@ -22,7 +22,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to initialize your application
         
         //设置应用图标
-        NSApp.applicationIconImage = NSImage.init(named: "NSInfo")
+        NSApp.applicationIconImage = NSImage(named: "NSInfo")
         
         
         //设置点击状态图标时的响应事件
