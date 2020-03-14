@@ -8,7 +8,15 @@
 
 import Cocoa
 
-typealias ContentBundle = (title: String, contents: [String])
+
+
+typealias ContentInfo = (Int, String)
+
+struct ContentBundle {
+    let title: String
+    let files: [ContentInfo]
+    let folders: [ContentInfo]
+}
 
 
 
@@ -72,18 +80,34 @@ extension DragView{
     
     override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
        
-        if let src = sender.draggingPasteboard.readObjects(forClasses:  [NSURL.self], options: nil)?.first as? URL {
+        if var src = sender.draggingPasteboard.readObjects(forClasses:  [NSURL.self], options: nil)?.first as? URL {
             let properties: [URLResourceKey] = [ URLResourceKey.localizedNameKey, URLResourceKey.creationDateKey, URLResourceKey.localizedTypeDescriptionKey]
-            
             do {
+                let isDirectory = (try src.resourceValues(forKeys: [.isDirectoryKey])).isDirectory ?? false
+                if isDirectory == false{
+                    src = src.deletingLastPathComponent()
+                }
+                print("src", src)
                 let paths = try FileManager.default.contentsOfDirectory(at: src, includingPropertiesForKeys: properties, options: [FileManager.DirectoryEnumerationOptions.skipsHiddenFiles])
-                
-                let result: ContentBundle = (src.lastPathComponent, paths.map({$0.lastPathComponent}))
+                var files = [ContentInfo]()
+                var folders = [ContentInfo]()
+                for (idx, url) in paths.enumerated() {
+                    let isDirectory = (try url.resourceValues(forKeys: [.isDirectoryKey])).isDirectory ?? false
+                    if isDirectory{
+                        folders.append((idx, url.lastPathComponent))
+                    }
+                    else{
+                        files.append((idx, url.lastPathComponent))
+                    }
+                }
+                let result: ContentBundle = ContentBundle(title: src.lastPathComponent, files: files, folders: folders)
                 
                 delegate?.dragDone(by: self, get: result)
                 
                 return true
-            } catch  {  }
+            } catch let error{
+                print("error: \(error.localizedDescription)")
+            }
             
         }
         return false

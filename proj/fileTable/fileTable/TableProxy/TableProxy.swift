@@ -24,15 +24,10 @@ enum Section{
 }
 
 
-private let people:[String] = ["Frank","Monica","Natalie","Alice"]
-private let groups:[String] = ["Engineers","Teachers","Bookkeepers"]
-
-
-
 struct TbData{
     var headerTitle = Section.empty
-    var contents = [String]()
-    
+    var files = [ContentInfo]()
+    var dirs = [ContentInfo]()
     
     var title: String{
         headerTitle.name
@@ -63,10 +58,25 @@ class TableProxy: NSObject, TableSectionDelegate, TableSectionDataSource{
                     sectionRow -= 1
                 }
             }
-            let cell = tableView.makeView(withIdentifier: .contentFile, owner: self) as! NSTableCellView
             
-            cell.textField?.stringValue = data.contents[sectionRow]
-            return cell
+            for argv in data.files{
+                let (index, title) = argv
+                if index == sectionRow {
+                    let cell = tableView.makeView(withIdentifier: .contentFile, owner: self) as! NSTableCellView
+                    cell.textField?.stringValue = title
+                    return cell
+                }
+            }
+            
+            for argv in data.dirs{
+                let (index, title) = argv
+                if index == sectionRow {
+                    let cell = tableView.makeView(withIdentifier: .contentFolder, owner: self) as! NSTableCellView
+                    cell.textField?.stringValue = title
+                    return cell
+                }
+            }
+            
         }
         return nil
     }
@@ -91,7 +101,15 @@ class TableProxy: NSObject, TableSectionDelegate, TableSectionDataSource{
     
 
     func table(tb: NSTableView, headerForSection section: Int) -> NSView? {
-        let sectionView = tb.makeView(withIdentifier: .header, owner: self) as! NSTableCellView
+        let sectionView = tb.makeView(withIdentifier: .header, owner: self) as! HeaderCell
+        var toHide = false
+        switch data.headerTitle {
+        case .empty:
+            toHide = true
+        default:
+            ()
+        }
+        sectionView.toggleImgHide(toHide)
         return sectionView
     }
 
@@ -123,7 +141,8 @@ class TableProxy: NSObject, TableSectionDelegate, TableSectionDataSource{
         if table(tb: tb, headerForSection: section) != nil {
             count = 1
         }
-        count += data.contents.count
+        count += data.dirs.count
+        count += data.files.count
         return count
     }
 
@@ -170,7 +189,8 @@ extension TableProxy{
 
     func update(content info: ContentBundle){
         data.headerTitle = .title(info.title)
-        data.contents = info.contents
+        data.dirs = info.folders
+        data.files = info.files
     }
 
 

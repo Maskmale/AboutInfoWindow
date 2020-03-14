@@ -18,6 +18,7 @@
 		269C9A06241D4C8600B37EAD /* TableProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269C9A05241D4C8600B37EAD /* TableProxy.swift */; };
 		269C9A08241D4CFD00B37EAD /* TableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269C9A07241D4CFD00B37EAD /* TableProtocol.swift */; };
 		269C9A0A241D4F3300B37EAD /* ExternCellViewID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269C9A09241D4F3300B37EAD /* ExternCellViewID.swift */; };
+		269C9A0D241D62BD00B37EAD /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269C9A0C241D62BD00B37EAD /* HeaderCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		269C9A05241D4C8600B37EAD /* TableProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableProxy.swift; sourceTree = "<group>"; };
 		269C9A07241D4CFD00B37EAD /* TableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableProtocol.swift; sourceTree = "<group>"; };
 		269C9A09241D4F3300B37EAD /* ExternCellViewID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternCellViewID.swift; sourceTree = "<group>"; };
+		269C9A0C241D62BD00B37EAD /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 		262A5799241D12B000ED4A92 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				269C9A0B241D62AB00B37EAD /* Cells */,
 				262A579A241D12C500ED4A92 /* DragView.swift */,
 			);
 			path = View;
@@ -161,6 +164,14 @@
 				269C9A07241D4CFD00B37EAD /* TableProtocol.swift */,
 			);
 			path = TableProxy;
+			sourceTree = "<group>";
+		};
+		269C9A0B241D62AB00B37EAD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				269C9A0C241D62BD00B37EAD /* HeaderCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +308,7 @@
 				269C9A03241D39D200B37EAD /* UserDefaultK.swift in Sources */,
 				269C9A08241D4CFD00B37EAD /* TableProtocol.swift in Sources */,
 				262A5770241D0EB300ED4A92 /* ViewController.swift in Sources */,
+				269C9A0D241D62BD00B37EAD /* HeaderCell.swift in Sources */,
 				269C9A06241D4C8600B37EAD /* TableProxy.swift in Sources */,
 				262A576E241D0EB300ED4A92 /* AppDelegate.swift in Sources */,
 				262A579B241D12C500ED4A92 /* DragView.swift in Sources */,

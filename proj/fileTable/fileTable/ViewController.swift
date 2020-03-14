@@ -20,15 +20,6 @@ class ViewController: NSViewController {
     let tbProxy = TableProxy()
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
