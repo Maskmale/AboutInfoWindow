@@ -11,18 +11,20 @@ import Cocoa
 
 enum Section{
     case empty
-    case title(String)
+    case title(URL)
 
     var name:String {
         switch self {
         case .empty:
             return "啥也没有"
         case .title(let headline):
-            return headline
+            return headline.lastPathComponent
         }
     }
 }
 
+
+typealias ContentDetail = (Int, String)
 
 struct TbData{
     var headerTitle = Section.empty
@@ -31,6 +33,19 @@ struct TbData{
     
     var title: String{
         headerTitle.name
+    }
+    
+    var fileNames: [ContentDetail]{
+        files.map { argv -> ContentDetail in
+            (argv.0, argv.1.lastPathComponent)
+        }
+    }
+    
+    
+    var dirNames: [ContentDetail]{
+        dirs.map { argv -> ContentDetail in
+            (argv.0, argv.1.lastPathComponent)
+        }
     }
 }
 
@@ -59,7 +74,7 @@ class TableProxy: NSObject, TableSectionDelegate, TableSectionDataSource{
                 }
             }
             
-            for argv in data.files{
+            for argv in data.fileNames{
                 let (index, title) = argv
                 if index == sectionRow {
                     let cell = tableView.makeView(withIdentifier: .contentFile, owner: self) as! NSTableCellView
@@ -68,7 +83,7 @@ class TableProxy: NSObject, TableSectionDelegate, TableSectionDataSource{
                 }
             }
             
-            for argv in data.dirs{
+            for argv in data.dirNames{
                 let (index, title) = argv
                 if index == sectionRow {
                     let cell = tableView.makeView(withIdentifier: .contentFolder, owner: self) as! NSTableCellView

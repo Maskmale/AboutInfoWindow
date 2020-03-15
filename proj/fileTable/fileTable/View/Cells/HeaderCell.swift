@@ -15,15 +15,9 @@ class HeaderCell: NSTableCellView{
     @IBOutlet weak var img: NSImageView!
     
     
-    @IBOutlet weak var arrow: NSImageView!
-    
-    
-    
-    
-    
     func toggleImgHide(_ toHide: Bool){
         img.isHidden = toHide
-        arrow.isHidden = true
+   
         
     }
     

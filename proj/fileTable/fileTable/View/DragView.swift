@@ -10,10 +10,10 @@ import Cocoa
 
 
 
-typealias ContentInfo = (Int, String)
+typealias ContentInfo = (Int, URL)
 
 struct ContentBundle {
-    let title: String
+    let title: URL
     let files: [ContentInfo]
     let folders: [ContentInfo]
 }
@@ -94,13 +94,13 @@ extension DragView{
                 for (idx, url) in paths.enumerated() {
                     let isDirectory = (try url.resourceValues(forKeys: [.isDirectoryKey])).isDirectory ?? false
                     if isDirectory{
-                        folders.append((idx, url.lastPathComponent))
+                        folders.append((idx, url))
                     }
                     else{
-                        files.append((idx, url.lastPathComponent))
+                        files.append((idx, url))
                     }
                 }
-                let result: ContentBundle = ContentBundle(title: src.lastPathComponent, files: files, folders: folders)
+                let result: ContentBundle = ContentBundle(title: src, files: files, folders: folders)
                 
                 delegate?.dragDone(by: self, get: result)
                 

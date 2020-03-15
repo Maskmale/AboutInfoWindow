@@ -809,68 +809,25 @@
                                                                     </constraints>
                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSFolderBurnable" id="UeO-RH-fIl"/>
                                                                 </imageView>
-                                                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="csh-ik-sys">
-                                                                    <rect key="frame" x="350" y="3" width="30" height="30"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="30" id="P9I-EC-w2Z"/>
-                                                                        <constraint firstAttribute="width" constant="30" id="XRx-JN-Z4i"/>
-                                                                    </constraints>
-                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSTouchBarRewindTemplate" id="ck0-nT-ojm"/>
-                                                                </imageView>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="g4M-z9-k5J" firstAttribute="leading" secondItem="O2G-Lz-ZkM" secondAttribute="trailing" constant="15" id="8iS-vM-Jbc"/>
                                                                 <constraint firstItem="O2G-Lz-ZkM" firstAttribute="centerY" secondItem="ylO-tc-fvr" secondAttribute="centerY" id="EiM-dZ-LyM"/>
-                                                                <constraint firstAttribute="trailing" secondItem="csh-ik-sys" secondAttribute="trailing" constant="15" id="HrV-87-5Wc"/>
                                                                 <constraint firstItem="O2G-Lz-ZkM" firstAttribute="leading" secondItem="ylO-tc-fvr" secondAttribute="leading" constant="10" id="K0o-ah-UUV"/>
                                                                 <constraint firstAttribute="trailing" secondItem="g4M-z9-k5J" secondAttribute="trailing" constant="100" id="Px7-Hd-YXl"/>
                                                                 <constraint firstItem="O2G-Lz-ZkM" firstAttribute="centerY" secondItem="g4M-z9-k5J" secondAttribute="centerY" id="gvq-Qp-URp"/>
-                                                                <constraint firstItem="csh-ik-sys" firstAttribute="centerY" secondItem="g4M-z9-k5J" secondAttribute="centerY" id="lA3-Cz-brt"/>
                                                             </constraints>
                                                             <connections>
-                                                                <outlet property="arrow" destination="csh-ik-sys" id="fQx-b2-1jQ"/>
                                                                 <outlet property="img" destination="O2G-Lz-ZkM" id="fOC-dw-tcu"/>
                                                                 <outlet property="textField" destination="g4M-z9-k5J" id="312-N2-DkP"/>
                                                             </connections>
                                                         </tableCellView>
-                                                        <tableCellView identifier="content_file" id="5eG-zn-JKB">
+                                                        <tableCellView identifier="content_folder" id="I0D-z5-36f">
                                                             <rect key="frame" x="1" y="39" width="395" height="36"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="cWg-1Q-WVp">
-                                                                    <rect key="frame" x="58" y="9" width="329" height="19"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="4ha-XV-c3r">
-                                                                        <font key="font" metaFont="system" size="16"/>
-                                                                        <color key="textColor" name="controlAccentColor" catalog="System" colorSpace="catalog"/>
-                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                                    </textFieldCell>
-                                                                </textField>
-                                                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J81-uI-jhF">
-                                                                    <rect key="frame" x="20" y="6" width="25" height="25"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="25" id="MSI-70-sUR"/>
-                                                                        <constraint firstAttribute="width" constant="25" id="P7U-cP-9lY"/>
-                                                                    </constraints>
-                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSMultipleDocuments" id="j1Z-eq-ihy"/>
-                                                                </imageView>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstItem="cWg-1Q-WVp" firstAttribute="leading" secondItem="J81-uI-jhF" secondAttribute="trailing" constant="15" id="CGC-rQ-E1t"/>
-                                                                <constraint firstItem="J81-uI-jhF" firstAttribute="leading" secondItem="5eG-zn-JKB" secondAttribute="leading" constant="20" id="GsA-Y9-Vas"/>
-                                                                <constraint firstItem="J81-uI-jhF" firstAttribute="centerY" secondItem="cWg-1Q-WVp" secondAttribute="centerY" id="dXI-ZK-qOy"/>
-                                                                <constraint firstAttribute="trailing" secondItem="cWg-1Q-WVp" secondAttribute="trailing" constant="10" id="iFt-24-y0d"/>
-                                                                <constraint firstItem="J81-uI-jhF" firstAttribute="centerY" secondItem="5eG-zn-JKB" secondAttribute="centerY" id="mjU-pL-o2b"/>
-                                                            </constraints>
-                                                            <connections>
-                                                                <outlet property="textField" destination="cWg-1Q-WVp" id="mKS-dA-gk0"/>
-                                                            </connections>
-                                                        </tableCellView>
-                                                        <tableCellView identifier="content_folder" id="I0D-z5-36f">
-                                                            <rect key="frame" x="1" y="77" width="395" height="36"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                            <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="MXA-gD-8pi">
-                                                                    <rect key="frame" x="58" y="9" width="329" height="19"/>
+                                                                <textField horizontalHuggingPriority="249" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="MXA-gD-8pi">
+                                                                    <rect key="frame" x="58" y="9" width="229" height="19"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="ZbG-hH-Ln8">
                                                                         <font key="font" metaFont="system" size="16"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -885,16 +842,97 @@
                                                                     </constraints>
                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSFolder" id="wx3-aG-ssk"/>
                                                                 </imageView>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WZK-qV-Lib">
+                                                                    <rect key="frame" x="295" y="8" width="29" height="19"/>
+                                                                    <buttonCell key="cell" type="roundRect" bezelStyle="roundedRect" image="NSQuickLookTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Dpf-xd-7dX">
+                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                        <font key="font" metaFont="controlContent"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="btnRevealInFinderSelected:" target="XfG-lQ-9wD" id="kgF-e4-BRb"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cd8-0k-Z9X">
+                                                                    <rect key="frame" x="344" y="8" width="21" height="19"/>
+                                                                    <buttonCell key="cell" type="roundRect" bezelStyle="roundedRect" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dYV-4u-cWi">
+                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                        <font key="font" metaFont="controlContent"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="mnuRemoveRowSelected:" target="XfG-lQ-9wD" id="S51-qD-YFO"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="9tf-51-XaO" firstAttribute="centerY" secondItem="MXA-gD-8pi" secondAttribute="centerY" id="0Kv-oh-v6C"/>
                                                                 <constraint firstItem="9tf-51-XaO" firstAttribute="leading" secondItem="I0D-z5-36f" secondAttribute="leading" constant="20" id="ALP-uH-Cvf"/>
-                                                                <constraint firstAttribute="trailing" secondItem="MXA-gD-8pi" secondAttribute="trailing" constant="10" id="ZCj-dM-66Y"/>
+                                                                <constraint firstItem="Cd8-0k-Z9X" firstAttribute="centerY" secondItem="MXA-gD-8pi" secondAttribute="centerY" id="OD7-ac-YUW"/>
+                                                                <constraint firstItem="Cd8-0k-Z9X" firstAttribute="leading" secondItem="WZK-qV-Lib" secondAttribute="trailing" constant="20" id="Sjl-F1-OmJ"/>
+                                                                <constraint firstItem="WZK-qV-Lib" firstAttribute="leading" secondItem="MXA-gD-8pi" secondAttribute="trailing" constant="10" id="crg-8N-mDM"/>
                                                                 <constraint firstItem="9tf-51-XaO" firstAttribute="centerY" secondItem="I0D-z5-36f" secondAttribute="centerY" id="jCx-Xs-7Ea"/>
                                                                 <constraint firstItem="MXA-gD-8pi" firstAttribute="leading" secondItem="9tf-51-XaO" secondAttribute="trailing" constant="15" id="ltP-3Z-cl7"/>
+                                                                <constraint firstItem="Cd8-0k-Z9X" firstAttribute="centerY" secondItem="WZK-qV-Lib" secondAttribute="centerY" id="rti-ol-HIL"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Cd8-0k-Z9X" secondAttribute="trailing" constant="30" id="t4d-Zc-c59"/>
                                                             </constraints>
                                                             <connections>
                                                                 <outlet property="textField" destination="MXA-gD-8pi" id="VXp-7h-SHI"/>
+                                                            </connections>
+                                                        </tableCellView>
+                                                        <tableCellView identifier="content_file" id="5eG-zn-JKB">
+                                                            <rect key="frame" x="1" y="77" width="395" height="36"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="cWg-1Q-WVp">
+                                                                    <rect key="frame" x="58" y="9" width="230" height="19"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="4ha-XV-c3r">
+                                                                        <font key="font" metaFont="system" size="16"/>
+                                                                        <color key="textColor" name="controlAccentColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                                <button horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZOO-GR-Qlh">
+                                                                    <rect key="frame" x="296" y="8" width="29" height="19"/>
+                                                                    <buttonCell key="cell" type="roundRect" bezelStyle="roundedRect" image="NSQuickLookTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SMd-pj-Ybb">
+                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                        <font key="font" metaFont="controlContent"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="btnRevealInFinderSelected:" target="XfG-lQ-9wD" id="JqP-De-dEt"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RpK-Yh-AaA">
+                                                                    <rect key="frame" x="344" y="8" width="21" height="19"/>
+                                                                    <buttonCell key="cell" type="roundRect" bezelStyle="roundedRect" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dtL-2N-kdH">
+                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                        <font key="font" metaFont="controlContent"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="mnuRemoveRowSelected:" target="XfG-lQ-9wD" id="3Kw-3N-Cui"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J81-uI-jhF">
+                                                                    <rect key="frame" x="20" y="6" width="25" height="25"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="25" id="MSI-70-sUR"/>
+                                                                        <constraint firstAttribute="width" constant="25" id="P7U-cP-9lY"/>
+                                                                    </constraints>
+                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSMultipleDocuments" id="j1Z-eq-ihy"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="ZOO-GR-Qlh" firstAttribute="centerY" secondItem="5eG-zn-JKB" secondAttribute="centerY" id="A4V-hn-zmE"/>
+                                                                <constraint firstItem="cWg-1Q-WVp" firstAttribute="leading" secondItem="J81-uI-jhF" secondAttribute="trailing" constant="15" id="CGC-rQ-E1t"/>
+                                                                <constraint firstItem="J81-uI-jhF" firstAttribute="leading" secondItem="5eG-zn-JKB" secondAttribute="leading" constant="20" id="GsA-Y9-Vas"/>
+                                                                <constraint firstAttribute="trailing" secondItem="RpK-Yh-AaA" secondAttribute="trailing" constant="30" id="MO1-1X-1fE"/>
+                                                                <constraint firstAttribute="trailing" secondItem="ZOO-GR-Qlh" secondAttribute="trailing" constant="70" id="bLm-If-aAu"/>
+                                                                <constraint firstItem="J81-uI-jhF" firstAttribute="centerY" secondItem="cWg-1Q-WVp" secondAttribute="centerY" id="dXI-ZK-qOy"/>
+                                                                <constraint firstItem="RpK-Yh-AaA" firstAttribute="centerY" secondItem="ZOO-GR-Qlh" secondAttribute="centerY" id="iuX-mI-utO"/>
+                                                                <constraint firstItem="RpK-Yh-AaA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZOO-GR-Qlh" secondAttribute="trailing" constant="8" symbolic="YES" id="lhV-eA-mg1"/>
+                                                                <constraint firstItem="ZOO-GR-Qlh" firstAttribute="leading" secondItem="cWg-1Q-WVp" secondAttribute="trailing" constant="10" id="lmW-1b-yrZ"/>
+                                                                <constraint firstItem="J81-uI-jhF" firstAttribute="centerY" secondItem="5eG-zn-JKB" secondAttribute="centerY" id="mjU-pL-o2b"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="textField" destination="cWg-1Q-WVp" id="mKS-dA-gk0"/>
                                                             </connections>
                                                         </tableCellView>
                                                     </prototypeCellViews>
@@ -943,6 +981,7 @@
         <image name="NSFolder" width="32" height="32"/>
         <image name="NSFolderBurnable" width="32" height="32"/>
         <image name="NSMultipleDocuments" width="32" height="32"/>
-        <image name="NSTouchBarRewindTemplate" width="22" height="30"/>
+        <image name="NSQuickLookTemplate" width="19" height="12"/>
+        <image name="NSRemoveTemplate" width="11" height="11"/>
     </resources>
 </document>
