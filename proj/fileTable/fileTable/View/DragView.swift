@@ -25,14 +25,10 @@ protocol DragViewProxy: class {
 }
 
 class DragView: NSView {
-    
-    var dragAble = true
 
     private var dragEntered = false{
         didSet{
-            needsDisplay = true
-            
-            
+            needsDisplay = true 
         }
     }
     

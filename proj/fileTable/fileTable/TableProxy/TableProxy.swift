@@ -70,15 +70,15 @@ struct TbData{
         }
         var fileDirCount = dirs.count
         while j < fileDirCount {
-            switch files[j].0 {
+            switch dirs[j].0 {
             case ..<(index - 1):
                 j+=1
             case index - 1:
-                files.remove(at: j)
+                dirs.remove(at: j)
                 fileDirCount -= 1
             default:
                 //  (index - 1)...
-                files[j].0 -= 1
+                dirs[j].0 -= 1
                 j+=1
             }
             
