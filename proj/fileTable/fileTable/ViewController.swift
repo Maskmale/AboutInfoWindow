@@ -59,29 +59,10 @@ class ViewController: NSViewController {
     
     
     
-    @IBAction func mnuRemoveRowSelected(_ sender: NSButton) {
+    @IBAction func removeRowSelected(_ sender: NSButton) {
         let row = tableView.row(for: sender)
-        
         tableView.beginUpdates()
-        var i = 0
-        let fileNameCount = tbProxy.data.files.count
-        while i < fileNameCount {
-            
-            if tbProxy.data.files[i].0 == row - 1{
-                tbProxy.data.files.remove(at: i)
-                break
-            }
-            i+=1
-        }
-        i = 0
-        let fileDirCount = tbProxy.data.dirs.count
-        while i < fileDirCount {
-            if tbProxy.data.dirs[i].0 == row - 1{
-                tbProxy.data.dirs.remove(at: i)
-                break
-            }
-            i+=1
-        }
+        tbProxy.remove(row: row)
         tableView.removeRows(at: [row], withAnimation: NSTableView.AnimationOptions.effectFade)
         tableView.endUpdates()
     }

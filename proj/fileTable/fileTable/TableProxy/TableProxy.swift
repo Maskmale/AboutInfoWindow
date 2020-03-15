@@ -47,6 +47,43 @@ struct TbData{
             (argv.0, argv.1.lastPathComponent)
         }
     }
+    
+    
+    mutating
+    func remove(row index: Int){
+        var i = 0
+        var j = 0
+        var fileNameCount = files.count
+        while i < fileNameCount {
+            switch files[i].0 {
+            case ..<(index - 1):
+                i+=1
+            case index - 1:
+                files.remove(at: i)
+                fileNameCount -= 1
+                j = i
+            default:
+                //  (index - 1)...
+                files[i].0 -= 1
+                i+=1
+            }
+        }
+        var fileDirCount = dirs.count
+        while j < fileDirCount {
+            switch files[j].0 {
+            case ..<(index - 1):
+                j+=1
+            case index - 1:
+                files.remove(at: j)
+                fileDirCount -= 1
+            default:
+                //  (index - 1)...
+                files[j].0 -= 1
+                j+=1
+            }
+            
+        }
+    }
 }
 
 
@@ -209,4 +246,7 @@ extension TableProxy{
     }
 
 
+    func remove(row index: Int){
+        data.remove(row: index)
+    }
 }
