@@ -1,3 +1,14 @@
+博客链接，[Cocoa App 开发进一步，表视图 TableView 、文件管理与拖拽](https://juejin.im/post/5e6dffe66fb9a07cbb6e543f)
+
+
+
+
+
+![Drag Fold Table](https://raw.github.com/coyingcat/AboutInfoWindow/master/imgs/1.png)
+
+
+<hr>
+
 
 
 博客链接，[认识 Cocoa App 的开发：Cocoa Binding 、Window Control 、菜单栏...](https://juejin.im/post/5e68fa5be51d45270764f0e4)
@@ -13,7 +24,7 @@ a replacement for the standard About dialog.
 
 It adds the option to open acknowledgments and visit the website by clicking a button.
 
-![DCOAboutWindow in action](https://raw.github.com/coyingcat/AboutInfoWindow/master/imgs/0.png)
+![AboutWindow in action](https://raw.github.com/coyingcat/AboutInfoWindow/master/imgs/0.png)
 
 
 ## Showing acknowledgments
