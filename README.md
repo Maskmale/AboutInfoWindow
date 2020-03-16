@@ -1,8 +1,12 @@
 博客链接，[Cocoa App 开发进一步，表视图 TableView 、文件管理与拖拽](https://juejin.im/post/5e6dffe66fb9a07cbb6e543f)
 
 
+开始时，
+
+![Drag Fold Table](https://raw.github.com/coyingcat/AboutInfoWindow/master/imgs/1_0.png)
 
 
+拖入文件后，
 
 ![Drag Fold Table](https://raw.github.com/coyingcat/AboutInfoWindow/master/imgs/1.png)
 
